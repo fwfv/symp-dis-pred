@@ -1,0 +1,69 @@
+{% extends "app/base.html" %}
+{%load account socialaccount%}
+{%block title%}Signup{%endblock title%}
+
+{% block body %}
+<div class="signup-container">
+    <div class="signup-box">
+        <h2>Create an Account</h2>
+
+        <form class="signup-form" method="post" action="{% url 'account_signup' %}">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <p>Already have an account? <a href="{% url 'account_login' %}"><strong>Log in</strong></a></p>
+
+        <hr>
+
+        {# Google login option #}
+        <a class="google-login" href="{% provider_login_url 'google' %}">Sign Up with Google</a>
+    </div>
+</div>
+
+<style>
+    /* static/styles.css */
+
+    .signup-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .signup-box {
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 8px;
+        width: 300px;
+        text-align: center;
+    }
+
+    .signup-form {
+        margin-bottom: 10px;
+    }
+
+    button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    .google-login {
+        color: #4285f4;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10px;
+    }
+</style>
+{% endblock %}
