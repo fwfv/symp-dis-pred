@@ -1,0 +1,62 @@
+{% extends 'app/base.html' %}
+{%load static%}
+{%block title%}Home{%endblock title%}
+
+{%block body%}
+
+<style>
+    /* Internal CSS Styles */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .home-container {
+        text-align: center;
+    }
+
+    .home-box {
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 600px; /* Adjust the maximum width of the content */
+    }
+    p {
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+
+<div class="home-container">
+    <div class="home-box">
+        <h2>Welcome to Your Disease Prediction Project</h2>
+        <br>
+
+        <p>Our project leverages advanced machine learning technology to predict diseases based on user-provided symptoms. Powered by a robust Django web application, we offer a seamless experience for users to input symptoms and receive accurate predictions.</p>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Accurate Predictions:</strong> Our machine learning model is trained on accurate dataset it  ensures precise disease predictions.</li>
+            <li><strong>User-Friendly Interface:</strong> A user-friendly interface makes it easy for individuals to input their symptoms and obtain results.</li>
+            <li><strong>Contact and Support:</strong> Have questions or feedback? Reach out through our contact page.</li>
+        </ul>
+
+        <h2>Get Started</h2>
+        <p>Ready to explore the world of disease prediction? Simply navigate to our prediction page, enter your symptoms, and let our advanced system provide you with valuable insights into your health.</p>
+    </div>
+    <br><br><br><br><br>
+</div>
+
+
+{%endblock %}

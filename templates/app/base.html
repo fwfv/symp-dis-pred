@@ -1,0 +1,35 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MLPredictions | {%block title%}{%endblock title%} </title></title>  
+    <link rel="stylesheet" type="text/css" href="{%static 'style.css'%}" />
+  </head>
+  <body>
+    <main>
+      <h1>Hello, World</h1>
+      <nav>
+        <ul>
+          <li><a href="{%url 'index'%}">Home</a></li>
+          <li><a href="{%url 'prediction'%}">Predictions</a></li> 
+          <li><a href="{%url 'contact'%}">Contact</a></li>
+          <li><a href="{%url 'about'%}">About</a></li>
+          {%if user.is_authenticated %}
+              <li><a href="{% url 'account_logout' %}">logout</a></li>
+          {%else%}
+              <li><a href="{%url 'account_signup'%}">Signup</a></li>
+              <li><a href="{% url 'account_login' %}">Log in</a></li>
+          {%endif%}
+        </ul>
+      </nav>
+    </main>
+
+    {%block body%}
+
+    {% endblock body %}
+
+    <footer>&copy; 2024 MLPredictions</footer>  
+  </body>
+</html>

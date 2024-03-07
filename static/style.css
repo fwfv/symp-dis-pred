@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+main, a, footer{
+    color: black;
+  
+}
+main{
+    flex: 1;
+}
+h1 {
+    text-align: center;
+    height: 65px;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px; /* Adjust spacing between navigation items */
+}
+
+a {
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 600px) {
+    nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    nav li {
+        display: block;
+        margin-bottom: 10px; /* Adjust spacing between navigation items for small screens */
+    }
+}
+
+footer{
+    text-align: center;
+    padding: 10px;
+}
