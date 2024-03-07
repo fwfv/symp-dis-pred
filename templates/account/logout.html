@@ -1,0 +1,58 @@
+{% extends "app/base.html" %}
+{% load i18n %}
+{% load  account socialaccount %}
+{%block title%}Logout{%endblock title%}
+{% block body %}
+    <div class="logout-container">
+        <div class="logout-box">
+            <h2>{% trans "Sign Out" %}</h2>
+
+            <p>{% trans 'Are you sure you want to sign out?' %}</p>
+
+            <form method="post" action="{% url 'account_logout' %}" class="logout-form">
+                {% csrf_token %}
+                {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+
+                <button type="submit" class="btn-logout">{% trans 'Sign Out' %}</button>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        /* Internal CSS Styles */
+        .logout-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .logout-box {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .logout-form {
+            margin-top: 20px;
+        }
+
+        .btn-logout {
+            background-color: #d9534f;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-logout:hover {
+            background-color: #c9302c;
+        }
+    </style>
+{% endblock %}

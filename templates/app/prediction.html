@@ -1,0 +1,46 @@
+{% extends 'app/base.html' %}
+{%load static%}
+
+{% block title %}Predictions{% endblock title %}
+
+{% block body %}
+
+  <style>
+    .center-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container {
+      max-width: 400px;
+    }
+
+    .result-container {
+      text-align: center;
+      margin-bottom: 300px;
+    }
+  </style>
+
+  <div class="center-content">
+    <div class="form-container">
+      {% if not form_submitted %}
+        <h2>Symptom Selection</h2>
+        <form method="post" action="{% url 'prediction' %}">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary btn-block">Predict Disease</button>
+        </form>
+      {% endif %}
+
+      {% if prediction %}
+        <div class="result-container">
+          <h2>Prediction Result</h2>
+          <p>Selected Symptoms: {{ selected_symptoms|join:", " }}</p>
+          <p>Predicted Disease: {{ prediction }}</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock body %}
