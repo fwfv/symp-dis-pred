@@ -54,24 +54,24 @@ ALTER DATABASE database_name OWNER TO username;
 \q
 ```
 
-* first command is using default postgres user to log into the psql
-* Fill the database_name with what you wish call your database
-* Fill the username and password with your choice
+* First command is using default postgres user to log into the psql
+* Fill the `database_name` with what you wish call your database
+* Fill the `username` and `password` with your choice
 * Replace all placeholders
-* \q is to quit out of the psql
+* `\q` is to quit out of the psql
 
 ##### Add Postgresql To Pgadmin
 
-* Log in to the Pgadmin web console at 127.0.0.1/pgadmin4
+* Log in to the Pgadmin web console at `127.0.0.1/pgadmin4` in your web browser
 * Input email and password you set at the time of installation
 * Click on Add new server
-* Name :  Whatever you wish
-* Click on Connection Tab
-* Host name / Address :  localhost
-* Maintainance database :  database_name (when setting up the postgresql in psql)
-* Username :  username (when setting up postgresql in psql)
-* Password :  password (when setting up postgresql in psql)
-* Click Save
+* Name :  `Whatever you wish`
+* Click on `Connection` Tab
+* Host name / Address :  `localhost`
+* Maintainance database :  `database_name` (when setting up the postgresql in psql)
+* Username :  `username` (when setting up postgresql in psql)
+* Password :  `password` (when setting up postgresql in psql)
+* Click `Save`
 
 ##### Setup virtualenv and Django
 
@@ -83,4 +83,4 @@ source .venv/bin/activate
 pip install -r requirements.txt
 django-admin startproject main .
 python3 manage.py startapp app
-```
+`
