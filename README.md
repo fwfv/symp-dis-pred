@@ -83,4 +83,46 @@ source .venv/bin/activate
 pip install -r requirements.txt
 django-admin startproject main .
 python3 manage.py startapp app
-`
+python3 manage.py runserver
+```
+
+You Should See Page Like This
+
+![Default Install Page](/Extra/django-inst.png)
+
+* Git clone this repository
+* Copy the folders and files which are not present in the current project from the cloned repository folders
+* Names should be the same
+* Check contents of every file they should be the same if not paste from the cloned repository files
+* Do not copy Extra and README.md
+* In `main` `settings.py` and `urls.py` have changes
+* In app `urls.py`, `views.py` have changes
+* Confirm all changes are Good
+
+```
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py createsuperuser
+python3 manage.py runserver
+```
+
+Go To The Django Admin Login Page
+
+![Django Admin Login Page](/Extra/django-adm.png)
+
+* On login Go to `sites`
+* Edit the entry of `example.com` by clicking on it and change both Domain and Display Name to `127.0.0.1:8000`
+* Click `Save`
+* Now Before Going further watch this [youtube](https://youtu.be/56w8p0goIfs?si=PGtMgSOjspy4GjUi)
+* The Video Might become out of date but the process will be similar
+* Key points are Configure `Social Provider`
+* Go to `Admin` then `Social applications`
+* Add Social Application
+* Provider `Google` in our case
+* Give any `Name`
+* `Client id` and `Secret key`
+* Push site from available to chosen
+* Click `Save`
+* `Logout`
+* Go to `127.0.0.1:8000`
+* Project should be all setup and ready
